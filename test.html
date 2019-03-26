@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+//====================Extend======================//
+class Person { constructor(name) { this.name = name;
+}
+speak() { console.log('My name is ' + this.name);
+}
+}
+class Student extends Person {//subclass of Person
+constructor(name, id) {
+    super(name);//call the parent constructor
+    this.id = id;
+}
+}
+var studentA = new Student('Bob', 's1234567890');
+console.log(studentA.name);
+
+//==============static mode================//
+// class Point { constructor(x, y) { this.x = x; this.y = y;
+// }
+// static distance(a, b) { const dx = a.x - b.x; const dy = a.y - b.y;
+// return Math.sqrt(dx * dx + dy * dy);
+// }
+// }
+// var p1 = new Point(5, 5);
+// var p2 = new Point(10, 10);
+// console.log(Point.distance(p1, p2));
+
+
+//=======================Class declaration=========================//
+// class Rectangle { 
+//     constructor(height, width) { 
+//         this.height = height;
+//         this.width = width;
+//     }
+// }
+// var myRect = new Rectangle(100, 200);
+// console.log(myRect.height)
+
+//====prototype:allows you to add new properties
+//(or methods) to object constructors.You can't do it without prototype=================//
+// function Car(make, model, year) { this.make = make; this.model = model; this.year = year; this.info = function() 
+// {return this.make + " " + this. model + " " + this. year;};
+// }
+// var car1 = new Car('Eagle', 'Talon TSi', 1993);
+// Car.prototype.sakuya = 'My waifu';
+// Car.prototype.info = function() 
+// {return this.make + " " + this. model + " " + this. year;};
+// console.log(car1.sakuya);
+// var car2 = new Car('sakuya', 'miku', 1993);
+
+
+
+//================constructor declaration & adding property function============//
+// function Car(make, model, year) { 
+// this.make = make; 
+// this.model = model; 
+// this.year = year; 
+// this.info = function() 
+// {return this.make + " " + this. model + " " + this. year;};
+// }
+// var mycar = new Car('Eagle', 'Talon TSi', 1993);
+//  var kenscar = new Car('Nissan', '300ZX', 1992); 
+//  var vpgscar = new Car('Mazda', 'Miata', 1990);
+// //console.log(mycar.make);
+// mycar.price = 500; //add
+// mycar.salePrice = function () { this.price * 3};//add
+// console.log(mycar.price);
+// console.log(kenscar.price);//undefined
+
+//==========object declaration============//
+// var person = { name: 'Bob', birthday: '2011/1/1',
+// 'phone-number': '0912345678',
+// who: function () { return this.name;
+// }
+// };
+// var person2 = Object.create(person); 
+// var person3 = person;
+// console.log(person3.name);
+// person3.name = 'john';
+// console.log(person3.name);
+
+//==========================getter=================/
+// var obj = {
+//   log: ['a', 'b', 'c'],
+//   get latest() {
+//     if (this.log.length == 0) {
+//       return undefined;
+//     }
+//     return this.log[this.log.length - 1];
+//   }
+// }
+// var height = obj.latest;
+// console.log(obj.latest);
+// console.log(height);
+
+// var person = { name: 'Bob', birthday: '2011/1/1', height: 170,
+// 'phone-number': '0912345678',
+// who: function () { return this.name;
+// },
+
+// get myHeight() {return this.height; }
+// };
+// var height1 = person.myHeight; 
+// console.log(height1);
+// // expected output: "c"
+
+</script>
+
+</body>
+</html>
